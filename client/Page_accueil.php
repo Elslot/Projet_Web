@@ -3,9 +3,11 @@
 <html>
 <head>
 <meta charset=\" utf-8\">
+  <link rel="stylesheet" href="Page_accueil.css">
  <title>Accueil</title>
 </head>
-<body>
+<body> <header>
+    <h1>Quick Classic</h1>
 <div>
     <ul id="menu">
         <li>    <a href="Page_accueil.php">Accueil</a></li>
@@ -21,5 +23,11 @@
     </ul>
 </div>
 
+<div id="bandeau"> <img src ="../bandeau.jpg" alt="" width=100% height=98 /> </div>
+</header>
+
+<div id="fondbody">
+<h2> <img src ="../carre_accueil.png" alt=""/> Accueil </h1>
+ <footer> <p> <a href="mentions_legales.html" title="" accesskey="">Mentions légales</a> </p> </footer> 
 </body>
 </html>

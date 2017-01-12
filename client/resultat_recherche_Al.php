@@ -24,7 +24,7 @@
         		echo 'Titre : ' . $row['Titre_Album']. "<br>";
 				echo "</li>";
 			}
-			echo "</ul>".
+			echo "</ul>";
 
     		$pdo = null;
 		?>

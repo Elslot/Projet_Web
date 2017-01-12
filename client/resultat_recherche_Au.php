@@ -6,10 +6,7 @@
 	</head>
 	<body>
   	<?php
-			$prenom = $_POST["prenom"];
-			$nom = $_POST["nom"];
-			$login = $_POST["login"];
-			$mdp = $_POST["password"];
+			$auteur = $_POST["nom_Au"];
 
 			$driver = 'sqlsrv';
 			$host = 'INFO-SIMPLET';
@@ -19,7 +16,7 @@
 			$pdodsn = "$driver:Server=$host;Database=$nomDB";
 			$pdo = new PDO($pdodsn, $user, $password);
 
-			$requete = "Insert INTO Abonné (Nom_Abonné, Prénom_Abonné, Login, Password) VALUES (:nom, :prenom, :login, :mdp)";
+			$requete = "Select Nom_Musicien From Musicien join Composer on Musicien.Code_Musicien = Composer.Code_Musicien Where Nom_Musicien Like '$auteur%'";
 			echo "<ul>";
 			foreach ($pdo->query($requete) as $row)
 			{
@@ -27,7 +24,7 @@
         		echo 'Titre : ' . $row['Titre_Album']. "<br>";
 				echo "</li>";
 			}
-			echo "</ul>".
+			echo "</ul>";
 
     		$pdo = null;
 		?>

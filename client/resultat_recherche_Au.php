@@ -50,7 +50,7 @@
 				echo "</li>";
 			}
 			echo "</ul>";
-			echo "</div>"
+			echo "</div>";
 
     		$pdo = null;
 		?>

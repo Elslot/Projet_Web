@@ -8,6 +8,7 @@
 </head>
 <body><header>
     <h1>Quick Classic</h1>
+
 <div>
     <ul id="menu">
         <li>    <a href="Page_accueil.php">Accueil</a></li>
@@ -29,7 +30,7 @@
 
         <div id="fondbody">
              <h2> <img src ="carre_accueil.png"/> Accueil </h2> <p> Bienvenue sur le nouveau site de vente en ligne de musique classique Quick Classic! </br> Retrouvez des exemplaires de toutes les musiques
- que vous préférez, simplement et rapidement en quelques clics <p>
+ que vous préférez, simplement et rapidement en quelques clics yolo <p>
         </div>
  
         <footer> <p> <a href="mentions_legales.html" title="" accesskey="">Mentions légales</a> </p> </footer> 

@@ -3,7 +3,11 @@ html
 	margin-left: 15%;
 	margin-right: 15%;
 	font-family: Arial;
+
 }
+
+
+
 
 header 
 {
@@ -19,11 +23,14 @@ body>#fondbody
 	padding-left: 2%
 }
 
+
 #bandeau
 {
 	text-decoration: none;
 	margin-top: 2%;
 	border: 2px solid black;
+	padding : 0%;
+
 }
 
 /* -------------CSS Menu Déroulant------------------*/
@@ -114,9 +121,15 @@ border: 5px solid black;
 
 h2
 {
-	font-size:20px;
+	padding-left: 50px;
+	font-size:30px;
 }
 
+p
+{
+	font-size: 18px;
+
+}
 
 footer 
 {
@@ -134,13 +147,4 @@ footer > p > a
 	font-size: 14px;
 	border: 1px solid black;
 	padding:3px;
-}
-
-#map-canvas{
-	margin-left:14%;
-	margin-top: 5%;
-	margin-bottom: 6%;
-	max-width:70%;
-	border:2px solid black;
-
 }

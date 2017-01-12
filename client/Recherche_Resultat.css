@@ -1,0 +1,171 @@
+html
+{
+	margin-left: 15%;
+	margin-right: 15%;
+	font-family: Arial;
+}
+
+header 
+{
+	margin-top:  1.5%;
+	text-align:center;
+}
+
+body>#fondbody
+{
+	margin-top: 2%;
+	border:2px solid black;
+	background-color: #8F8C8C ;
+	padding-left: 2%
+}
+
+#bandeau
+{
+	text-decoration: none;
+	margin-top: 2%;
+	border: 2px solid black;
+}
+
+/* -------------CSS Menu Déroulant------------------*/
+
+#menu, #menu ul /* Liste */     
+{
+padding-left: 0;
+padding-right: 0;
+padding-bottom: 5px;
+padding-top: 5px;
+
+margin : 0; /* ni extérieure */
+list-style : none; /* on supprime le style par défaut de la liste */
+}
+
+#menu /* Ensemble du menu */
+{
+margin-top: 2%;
+font-family : Arial; /* choix de la police */
+font-size : 16px; /* hauteur du texte : 12 pixels */
+}
+
+#menu>li a /* Contenu des listes */
+{
+display : block; /* on change le type d'élément, les liens deviennent des balises de type block */
+background : #6E6E6E; /* couleur de fond */        
+color : #fff; /* couleur du texte */
+text-decoration : none; /* on supprime le style par défaut des liens (=souligné) */
+padding-left: 30px;
+padding-right: 100px;
+border: 3px black;
+}
+
+#menu li{
+	padding-bottom: 2px;
+	padding-top: 2px;
+	background-color: #6E6E6E;
+}
+
+#menu li /* Éléments des listes */      
+{ 
+display: inline-block;
+}
+
+#menu ul li {
+display: inherit;
+}
+
+#menu li>ul /* Sous-listes */
+{ 
+position: absolute; /* Position absolue */
+display: none; /* Hop, on envoie loin du champ de vision */
+
+font-weight: bold;
+}
+
+#menu li>ul a:hover 
+{
+	padding-left: 40px;
+}
+
+#menu>li a:hover /* Lorsque la souris passe sur un des liens */    
+{
+background: #2E2E2E; /* On rend le fond plus foncé.*/
+}
+
+#menu li:hover ul /*au passage de la souris, on fait apparaitre les sous-listes */
+{
+display: block;
+color: black;
+width : 425px;
+}
+
+#menu li:hover #quartiers
+{
+width: 290px;
+}
+
+/* -------------FIN CSS Menu Déroulant------------------*/
+
+h1 
+{
+font-size:60px;
+background: grey;
+color:firebrick;
+border: 5px solid black;
+}
+
+h2
+{
+	font-size:20px;
+}
+
+
+footer 
+{
+	float : right;
+	position: relative;
+	margin-bottom: 5%;
+
+}
+
+footer > p > a  
+{
+	text-decoration: none;
+	background: grey;
+	color:white;
+	font-size: 14px;
+	border: 1px solid black;
+	padding:3px;
+}
+
+#map-canvas{
+	margin-left:14%;
+	margin-top: 5%;
+	margin-bottom: 6%;
+	max-width:70%;
+	border:2px solid black;
+
+}
+
+/** CSS lié aux pages de recherches et de résultats **/
+
+body>div>form, #resultats
+{
+	padding-left: 50px;
+	
+}
+
+body>div>form
+{
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+form>label
+{
+	padding-right: 10px;
+}
+
+form>input[name="Rechercher"]
+{
+	margin-top: 10px;
+	margin-left: 22%;
+}

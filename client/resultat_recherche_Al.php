@@ -19,6 +19,7 @@
         </li>
         <li>    <a href="panier_achat.php">Mon Panier</a></li>
         <li>    <a href="compte.php">Mon Compte</a></li>
+        <li>    <a href="A_propos.php">A propos</a></li>
     </ul>
 </div>
 
@@ -40,7 +41,7 @@
 			$pdodsn = "$driver:Server=$host;Database=$nomDB";
 			$pdo = new PDO($pdodsn, $user, $password);
 
-			$requete = "Select Titre_Album From Album Where Titre_Album Like '$album%'";
+			$requete = "Select Titre_Album, Code_Album From Album Where Titre_Album Like '$album%'";
 			echo "<div id=\"resultats\">";
 			echo "<ul>";
 			foreach ($pdo->query($requete) as $row)
@@ -48,6 +49,7 @@
 				echo "<li>";
         		echo $row['Titre_Album']. "<br>";
 				echo "</li>";
+				echo "<img src='image.php?Code=" .$row ['Code_Album']. "&Type="Album"'/>";
 			}
 			echo "</ul>";
 			echo "</div>";

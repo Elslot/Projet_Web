@@ -19,6 +19,7 @@
         </li>
         <li>    <a href="panier_achat.php">Mon Panier</a></li>
         <li>    <a href="compte.php">Mon Compte</a></li>
+        <li>    <a href="A_propos.php">A propos</a></li>
     </ul>
 </div>
 

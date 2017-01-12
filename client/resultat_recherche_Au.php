@@ -19,6 +19,7 @@
         </li>
         <li>    <a href="panier_achat.php">Mon Panier</a></li>
         <li>    <a href="compte.php">Mon Compte</a></li>
+        <li>    <a href="A_propos.php">A propos</a></li>
     </ul>
 </div>
 
@@ -40,7 +41,7 @@
 			$pdodsn = "$driver:Server=$host;Database=$nomDB";
 			$pdo = new PDO($pdodsn, $user, $password);
 
-			$requete = "Select DISTINCT Nom_Musicien From Musicien join Composer on Musicien.Code_Musicien = Composer.Code_Musicien Where Nom_Musicien Like '$auteur%'";
+			$requete = "Select DISTINCT Nom_Musicien, Composer.Code_Musicien From Musicien join Composer on Musicien.Code_Musicien = Composer.Code_Musicien Where Nom_Musicien Like '$auteur%'";
 			echo "<div id=\"resultats\">";
 			echo "<ul>";
 			foreach ($pdo->query($requete) as $row)
@@ -48,9 +49,10 @@
 				echo "<li>";
         		echo $row['Nom_Musicien']. "<br>";
 				echo "</li>";
+				echo "<img src='image.php?Code=" .$row ['Code_Musicien']. "&Type="Musicien"'/>";
 			}
 			echo "</ul>";
-			echo "</div>"
+			echo "</div>";
 
     		$pdo = null;
 		?>

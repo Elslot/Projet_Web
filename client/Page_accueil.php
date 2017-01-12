@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="Page_accueil.css">
  <title>Accueil</title>
 </head>
-<body> <header>
+<body><header>
     <h1>Quick Classic</h1>
 <div>
     <ul id="menu">
@@ -20,14 +20,18 @@
         </li>
         <li>    <a href="panier_achat.php">Mon Panier</a></li>
         <li>    <a href="compte.php">Mon Compte</a></li>
+        <li>    <a href="A_propos.php">A propos</a></li>
     </ul>
 </div>
 
-<div id="bandeau"> <img src ="../bandeau.jpg" alt="" width=100% height=98 /> </div>
+<div id="bandeau"> <img src ="../bandeau.jpg" alt="" width=100% height=100/> </div>
 </header>
 
-<div id="fondbody">
-<h2> <img src ="../carre_accueil.png" alt=""/> Accueil </h1>
- <footer> <p> <a href="mentions_legales.html" title="" accesskey="">Mentions légales</a> </p> </footer> 
-</body>
+        <div id="fondbody">
+             <h2> <img src ="carre_accueil.png"/> Accueil </h2> <p> Bienvenue sur le nouveau site de vente en ligne de musique classique Quick Classic! </br> Retrouvez des exemplaires de toutes les musiques
+ que vous préférez, simplement et rapidement en quelques clics <p>
+        </div>
+ 
+        <footer> <p> <a href="mentions_legales.html" title="" accesskey="">Mentions légales</a> </p> </footer> 
+    </body>
 </html>

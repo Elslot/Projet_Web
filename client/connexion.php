@@ -1,15 +1,4 @@
 
-
-
-<?php
-    session_start();
-    if (!isset($_SESSION["NOM_USER"])) 
-    {
-    $url = $_SERVER["REQUEST_URI"];
-    header("Location: connexion.php?url=".$url);
-    }
-?>
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -40,11 +29,12 @@
 </header>
 <div id="fondbody">
 <h2> <img src ="res/carre_compte.png"/> Page de Connexion: </h2>
-<?php
-echo "<p>Bonjour ".$_SESSION["NOM_USER"];
-echo "</p>";
-?>
-<p><a href='../serveur/deconnexion.php'> Deconnexion </a></p>
+
+    <form method="post" action="../serveur/traite_connexion.php">
+	Nom : <input name="Login" type="text" /><br/>
+	Mot de passe : <input name="Password" type="password" /><br/>
+	<input name="Connect" type="submit" value="Connecter" />
+    </form>
 </div>
 
 

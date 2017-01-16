@@ -20,14 +20,6 @@ body>#fondbody
 	padding-left: 2%
 }
 
-#connection
-{
-	color: #B22222;
-	font-size: 26px;
-	text-align: right;
-	margin-bottom: 5%;
-	padding-right: 2%;
-}
 
 #bandeau
 {
@@ -110,6 +102,7 @@ body>#fondbody
 {
 	padding-left: 40px;
 }
+
 
 /* -------------FIN CSS Menu Déroulant------------------*/
 

@@ -1,7 +1,7 @@
 html
 {
 	font-family: Arial;
-	background-image: url(walla.jpg);
+	background-image: url(Vinyl6.jpg);
 }
 
 header 
@@ -20,6 +20,15 @@ body>#fondbody
 	padding-left: 2%
 }
 
+#connection
+{
+	color: #B22222;
+	font-size: 26px;
+	text-align: right;
+	margin-bottom: 5%;
+	padding-right: 2%;
+}
+
 #bandeau
 {
 	margin-left: 15%;
@@ -27,9 +36,12 @@ body>#fondbody
 	text-decoration: none;
 	margin-top: 2%;
 	border: 2px solid black;
+	padding : 0%;
+
 }
 
 /* -------------CSS Menu Déroulant------------------*/
+
 
 #menu /* Ensemble du menu */
 {
@@ -42,69 +54,61 @@ body>#fondbody
 
 #menu, #menu ul /* Liste */     
 {
-padding-left: 0;
-padding-right: 0;
-padding-bottom: 5px;
-padding-top: 5px;
-
-margin : 0; /* ni extérieure */
-list-style : none; /* on supprime le style par défaut de la liste */
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	margin : 0; /* ni extérieure */
+	list-style : none; /* on supprime le style par défaut de la liste */
 }
 
 #menu>li a /* Contenu des listes */
 {
-display : block; /* on change le type d'élément, les liens deviennent des balises de type block */
-background : #6E6E6E; /* couleur de fond */        
-color : #fff; /* couleur du texte */
-text-decoration : none; /* on supprime le style par défaut des liens (=souligné) */
-padding-left: 30px;
-padding-right: 100px;
-border: 3px black;
+	display : block; /* on change le type d'élément, les liens deviennent des balises de type block */
+	background : #6E6E6E; /* couleur de fond */        
+	color : #fff; /* couleur du texte */
+	text-decoration : none; /* on supprime le style par défaut des liens (=souligné) */
+	padding-left: 30px;
+	padding-right: 100px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border: 3px black;
+	font-size: 28px;
 }
 
 #menu li{
 	padding-bottom: 2px;
 	padding-top: 2px;
 	background-color: #6E6E6E;
+	display: inline-block;
 }
 
-#menu li /* Éléments des listes */      
-{ 
-display: inline-block;
-}
-
-#menu ul li {
-display: inherit;
+#menu>li {
+	margin-bottom: 3%;
 }
 
 #menu li>ul /* Sous-listes */
 { 
-position: absolute; /* Position absolue */
-display: none; /* Hop, on envoie loin du champ de vision */
+	position: absolute; /* Position absolue */
+	display: none; /* Hop, on envoie loin du champ de vision */
+	font-weight: bold;
+}
 
-font-weight: bold;
+#menu>li a:hover /* Lorsque la souris passe sur un des liens */    
+{
+	background: #2E2E2E; /* On rend le fond plus foncé.*/
+}
+
+#menu li:hover ul /*au passage de la souris, on fait apparaitre les sous-listes */
+{
+	display: block;
+	color: black;
+	max-width : 425px;
 }
 
 #menu li>ul a:hover 
 {
 	padding-left: 40px;
-}
-
-#menu>li a:hover /* Lorsque la souris passe sur un des liens */    
-{
-background: #2E2E2E; /* On rend le fond plus foncé.*/
-}
-
-#menu li:hover ul /*au passage de la souris, on fait apparaitre les sous-listes */
-{
-display: block;
-color: black;
-width : 425px;
-}
-
-#menu li:hover #quartiers
-{
-width: 290px;
 }
 
 /* -------------FIN CSS Menu Déroulant------------------*/
@@ -122,16 +126,19 @@ h1
 h2
 {
 	padding-left: 50px;
-	font-size:20px;
+	font-size:42px;
 }
 
+p
+{
+	font-size: 18px;
+}
 
 footer 
 {
 	float : right;
 	position: relative;
 	margin-bottom: 5%;
-
 }
 
 footer > p > a  
@@ -143,6 +150,8 @@ footer > p > a
 	border: 1px solid black;
 	padding:3px;
 }
+
+
 
 /** CSS lié aux pages de recherches et de résultats **/
 

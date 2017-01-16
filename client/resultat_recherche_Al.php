@@ -47,9 +47,9 @@
 			foreach ($pdo->query($requete) as $row)
 			{
 				echo "<li>";
-        		echo $row['Titre_Album']. "<br>";
+        		echo "<a href=\"oeuvres_par_album.php?Code=".$row ['Code_Album']."&Nom=".$row['Titre_Album']."\">".$row['Titre_Album']. "</a><br>";
 				echo "</li>";
-				echo "<img src='image.php?Code=" .$row ['Code_Album']. "&Type="Album"'/>";
+				echo "<img src='image.php?Code=" .$row ['Code_Album']. "&Type=Album&Type_photo=Pochette'/>";
 			}
 			echo "</ul>";
 			echo "</div>";

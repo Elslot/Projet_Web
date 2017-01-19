@@ -28,7 +28,7 @@
 <div id="bandeau"> <img src ="bandeau.jpg" alt="" width=100% height=100/> </div>
 </header>
 <div id="fondbody">
-<h2> <img src ="res/carre_compte.png"/> Page de Connexion: </h2>
+<h2> <img src ="res/carre_compte.png"/> Page de Connexion : </h2>
 
     <form method="post" action="../serveur/traite_connexion.php">
 	<p>Nom : </p><input name="Login" type="text" /><br/>

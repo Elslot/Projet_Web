@@ -31,7 +31,7 @@
     </header>
 
         <div id="fondbody">
-            <h2> <img src ="carre_accueil.png"/> Accueil </h2>  
+            <h2> <img src ="res/carre_accueil.png"/> Accueil </h2>  
  <?php
     session_start();
     if (!isset($_SESSION["NOM_USER"])) 

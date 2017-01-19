@@ -31,8 +31,8 @@
 <h2> <img src ="res/carre_compte.png"/> Page de Connexion: </h2>
 
     <form method="post" action="../serveur/traite_connexion.php">
-	Nom : <input name="Login" type="text" /><br/>
-	Mot de passe : <input name="Password" type="password" /><br/>
+	<p>Nom : </p><input name="Login" type="text" /><br/>
+	<p>Mot de passe :</p> <input name="Password" type="password" /><br/>
 	<input name="Connect" type="submit" value="Connecter" />
     </form>
 </div>

@@ -42,7 +42,7 @@
 <h2> <img src ="res/carre_compte.png"/> Page de Connexion: </h2>
 <?php
 echo "<p>Bonjour ".$_SESSION["NOM_USER"];
-echo "</p>";
+echo "</p>"
 ?>
 <p><a href='../serveur/deconnexion.php'> Deconnexion </a></p>
 </div>

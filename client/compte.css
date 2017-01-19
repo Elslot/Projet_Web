@@ -106,6 +106,7 @@ body>#fondbody
 
 /* -------------FIN CSS Menu Déroulant------------------*/
 
+
 h1 
 {
 	font-size:60px;
@@ -125,6 +126,14 @@ h2
 p
 {
 	font-size: 18px;
+	display : inline-block;
+}
+
+p>a
+{
+	font-size: 25px;
+	text-align: right;
+	color: white;
 }
 
 footer 
@@ -142,4 +151,22 @@ footer > p > a
 	font-size: 14px;
 	border: 1px solid black;
 	padding:3px;
+}
+
+form>input[name="Login"]
+{
+	margin-left: 6%;
+	width: 15%;
+	margin-bottom: 1%;
+}
+form>input[name="Password"]
+{
+	width: 15%;
+	margin-bottom: 1%;
+}
+
+form>input[name="Connect"]
+{
+	margin-bottom: 5%;
+	margin-left: 18%;
 }

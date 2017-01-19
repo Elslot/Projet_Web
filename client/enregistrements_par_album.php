@@ -43,6 +43,7 @@
                 join Composition_Disque on Composition_Disque.Code_Morceau = Enregistrement.Code_Morceau
                 join Disque on Disque.Code_Disque = Composition_Disque.Code_Disque
                 Where Code_Album = " .$_GET['Code'];
+
             echo "<div id=\"resultats\">";
             echo "<ul>";
             foreach ($pdo->query($requete) as $row)

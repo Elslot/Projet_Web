@@ -27,7 +27,7 @@
 </header>
     <div id="fondbody">
         <?php
-            echo "<h2> Albums contenant les oeuvres de <i>" .$_GET['Nom']. "</i></h2>";
+            echo "<h2> Album contenant l'oeuvre <i>\"" .$_GET['Nom']. "\"</i></h2>";
 
             $i = 1;
 
@@ -45,9 +45,7 @@
                 join Enregistrement on Enregistrement.Code_Morceau = Composition_Disque.Code_Morceau
                 join Composition on Composition.Code_Composition = Enregistrement.Code_Composition
                 join Composition_Oeuvre on Composition_Oeuvre.Code_Composition = Composition.Code_Composition
-                join Oeuvre on Oeuvre.Code_Oeuvre = Composition_Oeuvre.Code_Oeuvre
-                join Composer on Composer.Code_Oeuvre = Oeuvre.Code_Oeuvre
-                Where Composer.Code_Musicien = ".$_GET['Code'];
+                Where Code_Oeuvre = " .$_GET['Code'];
             echo "<div id=\"resultats\">";
             echo "<ul>";
             foreach ($pdo->query($requete) as $row)

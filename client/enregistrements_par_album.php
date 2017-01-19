@@ -3,7 +3,7 @@
 <meta charset="utf-8"/>
 	<head>
 		<link rel="stylesheet" href="Recherche_Resultat.css">
-		<title>Auteurs trouvés</title>
+		<title>Enregistrements trouvés</title>
 	</head>
 	<body><header>
     <h1>Quick Classic</h1>
@@ -27,7 +27,7 @@
 </header>
     <div id="fondbody">
         <?php
-            echo "<h2> Contenu de l'album " .$_GET['Nom']. "</h2>";
+            echo "<h2> Contenu de l'album <i>\"" .$_GET['Nom']. "\"</i></h2>";
 
             $i = 1;
 
@@ -39,30 +39,26 @@
             $pdodsn = "$driver:Server=$host;Database=$nomDB";
             $pdo = new PDO($pdodsn, $user, $password);
 
-            $requete = "Select Album.Titre_Album From Musicien 
-                join Composer on Musicien.Code_Musicien = Composer.Code_Musicien 
-                join Oeuvre on Composer.Code_Oeuvre = Oeuvre.Code_Oeuvre
-                join Composition_Oeuvre on Oeuvre.Code_Oeuvre = Composition_Oeuvre.Code_Oeuvre
-                join Composition on Composition_Oeuvre.Code_Composition = Composition.Code_Composition
-                join Enregistrement on Composition.Code_Composition = Enregistrement.Code_Composition
-                join Composition_Disque on Enregistrement.Code_Morceau = Composition_Disque.Code_Morceau
-                join Disque on Composition_Disque.Code_Disque = Disque.Code_Disque
-                join Album on Disque.Code_Album = Album.Code_Album
-                Where Code_Album =" $_GET['Code'];
+            $requete = "Select DISTINCT Enregistrement.Titre, Enregistrement.Code_Morceau From Enregistrement 
+                join Composition_Disque on Composition_Disque.Code_Morceau = Enregistrement.Code_Morceau
+                join Disque on Disque.Code_Disque = Composition_Disque.Code_Disque
+                Where Code_Album = " .$_GET['Code'];
             echo "<div id=\"resultats\">";
             echo "<ul>";
             foreach ($pdo->query($requete) as $row)
             {
                 echo "<li>";
-                echo "Album n°" .$i. ":" .$row['Titre_Album']."<br>";
+                echo "Enregistrement n°" .$i. " : <i>" .$row['Titre']."</i><br>";
+                echo "<audio preload=auto src='enregistrement.php?Code=" .$row['Code_Morceau']. "' controls></audio>"; 
                 echo "</li>";
+                $i++;
             }
             echo "</ul>";
             echo "</div>";
 
             if ($i==1)
             {
-                echo "Pas d'albums";
+                echo "Pas d'enregistrements";
             }
 
             $pdo = null;

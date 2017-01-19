@@ -3,7 +3,7 @@
 <meta charset="utf-8"/>
 	<head>
 		<link rel="stylesheet" href="Recherche_Resultat.css">
-		<title>Oeuvres trouvés</title>
+		<title>Oeuvres trouvées</title>
 	</head>
 	<body><header>
     <h1>Quick Classic</h1>
@@ -25,7 +25,7 @@
 
 <div id="bandeau"> <img src ="../bandeau.jpg" alt="" width=100% height=98 /> </div>
 </header>
-	<div id"fondbody">
+	<div id="fondbody">
 		<form id="recherche_O" method="post" action="resultat_recherche_O.php">
         		<label id="l_nom_O">Nom de l'oeuvre</label><input name="nom_O" type="text"><br>
         		<input name="Rechercher" type="submit" value="Rechercher">
@@ -41,13 +41,13 @@
 			$pdodsn = "$driver:Server=$host;Database=$nomDB";
 			$pdo = new PDO($pdodsn, $user, $password);
 
-			$requete = "Select Titre_Oeuvre From Oeuvre Where Titre_Oeuvre Like '$oeuvre%'";
+			$requete = "Select Titre_Oeuvre, Code_Oeuvre From Oeuvre Where Titre_Oeuvre Like '$oeuvre%'";
 			echo "<div id=\"resultats\">";
 			echo "<ul>";
 			foreach ($pdo->query($requete) as $row)
 			{
-				echo "<li id=\"resultats\">";
-        		echo $row['Titre_Oeuvre']. "<br>";
+				echo "<li>";
+        		echo "<a href=\"albums_par_oeuvre.php?Code=".$row ['Code_Oeuvre']."&Nom=".$row['Titre_Oeuvre']."\">".$row['Titre_Oeuvre']. "</a><br>";
 				echo "</li>";
 			}
 			echo "</ul>";

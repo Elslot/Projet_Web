@@ -23,7 +23,7 @@
     </ul>
 </div>
 
-<div id="bandeau"> <img src ="../bandeau.jpg" alt="" width=100% height=98 /> </div>
+<div id="bandeau"> <img src ="res/bandeau.jpg" alt="" width=100% height=98 /> </div>
 </header>
 	<div id="fondbody">
 		<form id="recherche_O" method="post" action="resultat_recherche_O.php">

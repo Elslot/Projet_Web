@@ -39,17 +39,14 @@
 <div id="bandeau"> <img src ="bandeau.jpg" alt="" width=100% height=100/> </div>
 </header>
 <div id="fondbody">
-<h2> <img src ="res/carre_compte.png"/> Page de Connexion: </h2>
+<h2> <img src ="res/carre_compte.png"/> Page de Compte: </h2> <span><a href='../serveur/deconnexion.php'> Deconnexion </a></span>
+
+ 
+
 <?php
-echo "<p>Bonjour ".$_SESSION["NOM_USER"];
+echo "<p>Bienvenue sur la page de gestion de votre compte ".$_SESSION["NOM_USER"];
 echo "</p>"
 ?>
-<p><a href='../serveur/deconnexion.php'> Deconnexion </a></p>
 </div>
-
-
-
-
-
 </body>
-</head>
+</html>

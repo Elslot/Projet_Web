@@ -2,17 +2,28 @@
     $Password = $_REQUEST["Password"];
     $Login=$_REQUEST["Login"];
     // recherche si l'utilisateur est enregistré et possède le bon mot de passe
-    $conn = odbc_connect("Bibli", "ETD", "ETD", SQL_CUR_USE_ODBC) or die ("raté");
-    $query = "Select * from Lecteur where Login ='".$Login."' and Password ='".$Password."'";
-    $result = odbc_exec($conn,$query);
-    if ($row = odbc_result($result,1)) {//utilisateur enregistré avec mot de passe correct
+
+    $count = 'null';
+    $driver = 'sqlsrv';
+    $host = 'INFO-SIMPLET';
+    $nomDB = 'Classique_Web';
+    $user = 'ETD';
+    $password = 'ETD';
+    $pdodsn = "$driver:Server=$host;Database=$nomDB";
+    $pdo = new PDO($pdodsn, $user, $password);
+    $requete = "Select  * from Abonné where Login ='".$Login."' and Password ='".$Password."'";
+    foreach ($pdo->query($requete) as $row)
+    {
+        $count = 'notnull';
         session_start();
-        $_SESSION["NOM_USER"]= odbc_result($result,3);
-        odbc_close($conn);
+        $_SESSION["NOM_USER"]= $row['Login'] ;
         header("Location:../client/Page_accueil.php");
     }
-    else
-    {//Mot de passe (et/ou login) incorrect : rejet de l'utilisateur
+    if ($count == 'null')
+    {
         header("Location: ../client/connexion.php");
     }
+
+$pdo = null;
+    
 ?>

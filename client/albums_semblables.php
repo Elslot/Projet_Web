@@ -10,7 +10,7 @@
 <div>
     <ul id="menu">
         <li>    <a href="Page_accueil.php">Accueil</a></li>
-        <li>    <a>Album</a>
+        <li>    <a>Albums semblables</a>
             <ul>    
                     <li><a href="recherche_par_auteur.php">Recherche par Auteur</a></li>
                     <li><a href="recherche_par_album.php">Recherche par Album</a></li>
@@ -27,7 +27,7 @@
 </header>
     <div id="fondbody">
         <?php
-            echo "<h2> Albums contenant les oeuvres de <i>" .$_GET['Nom']. "</i></h2>";
+            echo "<h2> Albums semblables à <i>\"" .$_GET['Nom']. "\"</i></h2>";
 
             $i = 1;
 
@@ -47,7 +47,15 @@
                 join Composition_Oeuvre on Composition_Oeuvre.Code_Composition = Composition.Code_Composition
                 join Oeuvre on Oeuvre.Code_Oeuvre = Composition_Oeuvre.Code_Oeuvre
                 join Composer on Composer.Code_Oeuvre = Oeuvre.Code_Oeuvre
-                Where Composer.Code_Musicien = ".$_GET['Code'];
+                Where Composer.Code_Musicien = (Select distinct Composer.Code_Musicien From Album 
+                    join Disque on Album.Code_Album = Disque.Code_Album
+                    join Composition_Disque on Composition_Disque.Code_Disque = Disque.Code_Disque
+                    join Enregistrement on Enregistrement.Code_Morceau = Composition_Disque.Code_Morceau
+                    join Composition on Composition.Code_Composition = Enregistrement.Code_Composition
+                    join Composition_Oeuvre on Composition_Oeuvre.Code_Composition = Composition.Code_Composition
+                    join Oeuvre on Oeuvre.Code_Oeuvre = Composition_Oeuvre.Code_Oeuvre
+                    join Composer on Composer.Code_Oeuvre = Oeuvre.Code_Oeuvre
+                    Where Album.Code_Album = ".$_GET['Code'].")";
             echo "<div id=\"resultats\">";
             echo "<ul>";
             foreach ($pdo->query($requete) as $row)

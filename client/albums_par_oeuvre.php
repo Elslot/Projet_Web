@@ -39,7 +39,7 @@
             $pdodsn = "$driver:Server=$host;Database=$nomDB";
             $pdo = new PDO($pdodsn, $user, $password);
 
-            $requete = "Select DISTINCT Album.Titre_Album, Album.Code_Album From Album 
+            $requete = "Select DISTINCT Album.Titre_Album, Album.Code_Album, ASIN From Album 
                 join Disque on Album.Code_Album = Disque.Code_Album
                 join Composition_Disque on Composition_Disque.Code_Disque = Disque.Code_Disque
                 join Enregistrement on Enregistrement.Code_Morceau = Composition_Disque.Code_Morceau
@@ -51,7 +51,8 @@
             foreach ($pdo->query($requete) as $row)
             {
                 echo "<li>";
-                echo "<a href=\"enregistrements_par_album.php?Code=".$row ['Code_Album']."&Nom=".$row['Titre_Album']."\"> Album n°" .$i. " : <i>" .$row['Titre_Album']."</i></a><br>";
+                echo "<a href=\"enregistrements_par_album.php?Code=".$row ['Code_Album']."&Nom=".$row['Titre_Album']."&ASIN=".$row['ASIN']."\"> 
+                Album n°" .$i. " : <i>" .$row['Titre_Album']."</i></a><br>";
                 echo "<img src='image.php?Code=" .$row ['Code_Album']. "&Type=Album&Type_photo=Pochette'/>";
                 echo "</li>";
                 $i++;

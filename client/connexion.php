@@ -25,7 +25,7 @@
     </ul>
 </div>
 
-<div id="bandeau"> <img src ="bandeau.jpg" alt="" width=100% height=100/> </div>
+<div id="bandeau"> <img src ="res/bandeau.jpg" alt="" width=100% height=100/> </div>
 </header>
 <div id="fondbody">
 <h2> <img src ="res/carre_compte.png"/> Page de Connexion : </h2>

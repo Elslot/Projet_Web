@@ -27,8 +27,15 @@
 </header>
     <div id="fondbody">
         <?php
-            echo "<h2> Contenu de l'album <i>\"" .$_GET['Nom']. "\"</i></h2>";
+            session_start();
 
+            echo "<h2> Contenu de l'album <i>\"" .$_GET['Nom']. "\"</i></h2>";
+            echo "<form action=\"panier_achat.php?CodeAlbum=".$_GET['Code']."\" method=\"post\">";
+            echo "<p>";
+            echo "<input type=\"submit\" value=\"Ajouter tout l'album\" />";
+            echo "</p>";
+            echo "</form>";
+            
             $i = 1;
 
             $driver = 'sqlsrv';
@@ -44,13 +51,32 @@
                 join Disque on Disque.Code_Disque = Composition_Disque.Code_Disque
                 Where Code_Album = " .$_GET['Code'];
 
+            if($_GET['ASIN'] != null)
+            {
+                echo "<a href=\"DescAmazon.php?ASIN=".$_GET['ASIN']."\">Détails</a>";
+            }
+            else
+            {
+                echo "Les détails ne sont pas renseignés";
+            }
             echo "<div id=\"resultats\">";
             echo "<ul>";
             foreach ($pdo->query($requete) as $row)
             {
                 echo "<li>";
                 echo "Enregistrement n°" .$i. " : <i>" .$row['Titre']."</i><br>";
-                echo "<audio preload=auto src='enregistrement.php?Code=" .$row['Code_Morceau']. "' controls></audio>"; 
+                echo "<audio preload=auto src='enregistrement.php?Code=" .$row['Code_Morceau']. "' controls></audio>";
+                
+                if (isset($_SESSION["NOM_USER"])) {
+                    $url = $_SERVER["REQUEST_URI"];
+                
+                echo "<form action=\"../serveur/sauver_panier.php?url=".$url."&CodeEnr=".$row['Code_Morceau']."\" method=\"post\">";
+                echo "<span>";
+                echo "<input name=\"Ajout\" type=\"submit\" value=\"Ajouter au panier\" />";
+                echo "</span>";
+                echo "</form>";
+            }
+
                 echo "</li>";
                 $i++;
             }

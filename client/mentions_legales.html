@@ -1,9 +1,7 @@
-
-
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset=\" utf-8\">
+    <meta charset=" utf-8">
     <link rel="stylesheet" href="Page_accueil.css">
     <title>Accueil</title>
 </head>
@@ -31,22 +29,21 @@
     </header>
 
         <div id="fondbody">
-            <h2> <img src ="res/carre_accueil.png"/> Accueil </h2>  
- <?php
-    session_start();
-    if (!isset($_SESSION["NOM_USER"])) 
-    {
-        echo "<div id=\"connection\"><p> Bonjour Visiteur, vous pouvez vous connecter en cliquant sur \" Compte \" dans le menu ci-dessus.</br>
-        Pour essayer de vous connecter, utilisez le nom de compte maxime, et le mot de passe maxime qui sont déjà enregistré dans la base. </p> </div>" ;
-    }
-    else 
-    {
-        echo "<div id=\"connection\"> Bonjour, vous êtes connecté sous l'identifiant de: M.".$_SESSION["NOM_USER"];
-        echo "</div>";
-    }
-?>
-<p> Bienvenue sur le nouveau site de vente en ligne de musique classique Quick Classic! </br> Retrouvez des exemplaires de toutes les musiques
- que vous préférez, simplement et rapidement en quelques clics </p>
+            <h2> <img src ="res/carre_panier.png"/> Mentions Légales </h2>  
+ 
+
+<p> Site réalisé en 2017 dans le cadre d'un projet d'étude.</p>
+
+<p> <i>
+  ----------------------------------------------------------------------------</p><p>
+  "LICENCE BEERWARE" (Révision 42):
+  Arnaudeau Kilian et Beurier Corentin ont créé ce fichier. Tant que vous conservez cet avertissement,
+  vous pouvez faire ce que vous voulez de ce truc. Si on se rencontre un jour et
+  que vous pensez que ce truc vaut le coup, vous pouvez nous payer une bière en
+  retour. </p><p>
+  ----------------------------------------------------------------------------
+ 
+  </i></p>
         </div>
 
  

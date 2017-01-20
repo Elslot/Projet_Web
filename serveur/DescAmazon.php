@@ -1,4 +1,5 @@
-require('AmazonECS.php'); //nom de la classe téléchargée
+<?php
+require('../AmazonECS.php'); //nom de la classe téléchargée
     const Aws_ID = "AKIAIWL4MYIROQ36VBRQ"; // Identifiant
     const Aws_SECRET = "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"; //Secret
     const associateTag="quicclas-21"; // AssociateTag
@@ -13,3 +14,4 @@ require('AmazonECS.php'); //nom de la classe téléchargée
         $it = $items["Item"];
         displayItem($it);
     }
+?>

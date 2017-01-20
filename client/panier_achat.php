@@ -6,12 +6,15 @@
     $url = $_SERVER["REQUEST_URI"];
     header("Location: connexion.php?url=".$url);
     }
+    else {
+        $user = $_SESSION["NOM_USER"];
+    }
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
     <meta charset=\" utf-8\">
-    <link rel="stylesheet" href="Page_accueil.css">
+    <link rel="stylesheet" href="panier_achat.css">
     <title>Accueil</title>
 </head>
 <body>
@@ -34,7 +37,7 @@
             </ul>
         </div>
 
-        <div id="bandeau"> <img src ="bandeau.jpg" alt="" width=100% height=100/> </div>
+        <div id="bandeau"> <img src ="res/bandeau.jpg" alt="" width=100% height=100/> </div>
     </header>
 
         <div id="fondbody">
@@ -42,8 +45,34 @@
 
 
         </div>
+    <?php
+    if (isset($_GET['CodeAlbum'])){
+        
+    $driver = 'sqlsrv';
+    $host = 'INFO-SIMPLET';
+    $nomDB = 'Classique_Web';
+    $user = 'ETD';
+    $password = 'ETD';
+    $pdodsn = "$driver:Server=$host;Database=$nomDB";
+    $pdo = new PDO($pdodsn, $user, $password);
+    $requete = "Select DISTINCT 
+        Enregistrement.Code_Morceau, Enregistrement.Titre, Enregistrement.Prix
+        From Enregistrement 
+        join Composition_Disque on Composition_Disque.Code_Morceau = Enregistrement.Code_Morceau
+        join Disque on Disque.Code_Disque = Composition_Disque.Code_Disque
+        Where Code_Album = " .$_GET['CodeAlbum'];
+    foreach ($pdo->query($requete) as $row)
+    {
+    echo 'Enregistrement '.$row['Code_Morceau'];
+    echo '<tr>';
+    echo'<td>'.$row['Code_Morceau'].'</td>';
+    echo'<td>'.$row['Titre'].'</td>';
+    echo'<td>'.$row['Prix'].'</td>';
+    echo '</tr>';
+    }
+    echo '<tr>'.$_GET['CodeEnr'].'<td>';
+}
+?>
 
- 
-        <footer> <p> <a href="mentions_legales.html" title="" accesskey="">Mentions légales</a> </p> </footer> 
     </body>
 </html>

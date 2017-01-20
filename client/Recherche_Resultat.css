@@ -177,6 +177,12 @@ form>input[name="Rechercher"]
 	margin-left: 22%;
 }
 
+form>input[name="Ajout"]
+{
+	display:block;
+	padding-bottom: 5%;
+}
+
 a 
 {
 	text-decoration: none;

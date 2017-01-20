@@ -44,6 +44,14 @@
                 join Disque on Disque.Code_Disque = Composition_Disque.Code_Disque
                 Where Code_Album = " .$_GET['Code'];
 
+            if($_GET['ASIN'] != null)
+            {
+                echo "<a href=\"DescAmazon.php?ASIN=".$_GET['ASIN']."\">Détails</a>";
+            }
+            else
+            {
+                echo "Les détails ne sont pas renseignés";
+            }
             echo "<div id=\"resultats\">";
             echo "<ul>";
             foreach ($pdo->query($requete) as $row)
